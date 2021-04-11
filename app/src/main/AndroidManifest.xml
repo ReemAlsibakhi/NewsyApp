@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.newsolutions.newsyapp">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".ui.utilis.AppClass"
+        android:usesCleartextTraffic="true"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false"
+        android:theme="@style/Theme.NewsyApp">
+        <activity android:name=".ui.main.MainActivity"/>
+        <activity android:name=".ui.updatePost.UpdatePostActivity" />
+        <activity android:name=".ui.detail.DetailActivity" />
+        <activity android:name=".ui.auth.signup.RegisterActivity" />
+        <activity android:name=".ui.auth.login.LoginActivity" />
+        <activity
+            android:name=".ui.splach.SplachActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.home.HomeActivity" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <provider
+            android:authorities="com.newsolutions.newsyapp.contentprovider.OperationContentProvider"
+            android:name=".contentprovider.OperationContentProvider"
+            android:exported="true"/>
+        <receiver
+            android:name="com.newsolutions.newsyapp.ui.utilis.NetworkConnectivity"
+            android:enabled="true"
+            android:exported="true"/>
+    </application>
+
+</manifest>
